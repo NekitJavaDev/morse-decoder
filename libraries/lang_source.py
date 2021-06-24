@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # Form implementation generated from reading ui file 'lang_source.ui'
 #
 # Created by: PyQt5 UI code generator 5.10.1
@@ -7,6 +5,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -108,10 +107,8 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Form"))
         self.ru_button.setText(_translate("Form", "RU"))
         self.eng_button.setText(_translate("Form", "ENG"))
-        self.file_button.setText(_translate("Form", "select\n"
-"file"))
+        self.file_button.setText(_translate("Form", "select\nfile"))
         self.record_button.setText(_translate("Form", "record"))
         self.label.setText(_translate("Form", "LANGUAGE"))
         self.label_2.setText(_translate("Form", "SOURCE"))
         self.step.setText(_translate("Form", "continue"))
-

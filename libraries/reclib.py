@@ -1,13 +1,9 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-from PyQt5 import QtWidgets, QtGui
-from PyQt5.QtWidgets import QApplication
+# from PyQt5 import QtWidgets, QtGui
+# from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import Qt, QEventLoop, QThread, QObject, pyqtSlot, pyqtSignal
 
 import pyaudio
 import wave
-
 
 CHUNK = 1024  # Запись кусками по 1024 сэмпла
 SAMPLE_FORMAT = pyaudio.paInt16  # 16 бит на выборку
@@ -16,7 +12,6 @@ FS = 44100  # Запись со скоростью 44100 выборок(samples)
 
 
 class MorseWriter(QObject):
-
     run_trigger = pyqtSignal()
     stop_trigger = pyqtSignal(bool)
 
@@ -37,9 +32,9 @@ class MorseWriter(QObject):
 
     @pyqtSlot()
     def run(self):
-        #print('Recording')
+        # print('Recording')
         self.widjet.reciver.emit("started")
-        self.finished = False #flag of writing
+        self.finished = False  # flag of writing
 
         p = pyaudio.PyAudio()
 
@@ -77,12 +72,10 @@ class MorseWriter(QObject):
         if not self.save: msg = "force quit"
         self.widjet.reciver.emit(msg)
         self.finish.set()
-        #print('Finished recording')
+        # print('Finished recording')
 
-
-    #@pyqtSlot()
+    # @pyqtSlot()
     def stop(self, save):
-        #print("here")
+        # print("here")
         self.save = save
         self.not_stopped = False
-
